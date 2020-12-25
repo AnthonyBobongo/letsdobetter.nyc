@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Monument Grotesk';
+    src: local('Monument Grotesk Regular'), local('Monument-Grotesk-Regular'),
+        url('MonumentGrotesk-Regular.woff2') format('woff2'),
+        url('MonumentGrotesk-Regular.woff') format('woff'),
+        url('MonumentGrotesk-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: local('Druk'),
+        url('Druk-Bold.woff2') format('woff2'),
+        url('Druk-Bold.woff') format('woff'),
+        url('Druk-Bold.otf') format('otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: local('Druk'),
+        url('Druk-XCond-Super.woff2') format('woff2'),
+        url('Druk-XCond-Super.woff') format('woff'),
+        url('Druk-XCond-Super.otf') format('otf');
+    font-weight: 900;
+    font-style: normal;
+}

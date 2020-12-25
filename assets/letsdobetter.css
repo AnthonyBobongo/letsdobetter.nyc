@@ -1,0 +1,562 @@
+@keyframes k-v-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes k-highlight {
+  to {
+    color: var(--highlight-color);
+  }
+}
+
+:root {
+  --default-font-family: 'Druk', sans-serif;
+  --alt-font-family: 'Monument Grotesk', sans-serif;
+}
+
+
+
+html, body {
+  font-family: var(--default-font-family);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+html * {
+  box-sizing: border-box;
+}
+
+section {
+  background-color: var(--background-color);
+  bottom: 0;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  text-align: center;
+  transition: opacity 1s;
+}
+
+section > .content {
+  padding: 4rem;
+}
+
+.scroll {
+  bottom: 40px;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: fixed;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.scroll .scroll-text.animate {
+  animation: k-v-bounce 3s ease-in-out 4s;
+}
+
+.main-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 90;
+}
+
+.main-header nav {
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.main-header nav div {
+  margin: 0 1rem;
+}
+
+.main-header nav.no-items .nav-item {
+  display: none;
+}
+
+.main-header a,
+.main-header a:link,
+.main-header a:visited,
+.main-header a:hover,
+.main-header button {
+  background-image: linear-gradient(var(--header-color), var(--header-color));
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+  background-position: 0 95%;
+  border: none;
+  color: var(--header-color);
+  transition: background-size 200ms, color 1s;
+  text-decoration: none;
+}
+
+.main-header a:hover,
+.main-header button:hover {
+  background-size: 100% 2px;
+  color: var(--header-color);
+}
+
+.main-header button {
+  font-family: var(--default-font-family);
+  font-weight: 900;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0 1rem;
+  padding: 0;
+}
+
+#menu {
+  --background-color: #140b02;
+  --header-color: #e9eadc;
+  --highlight-color: #c4a260;
+  --text-color: #e9eadc;
+  --logo-image: url('assets/LDB_Pearl.png');
+  background-color: var(--background-color);
+  bottom: 0;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  text-align: center;
+  transform: translateY(-110vh);
+  transition: transform 1s;
+  z-index: 50;
+}
+
+#menu.expanded {
+  transform: translateY(0);
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  font-size: 7rem;
+  text-transform: uppercase;
+}
+
+.menu-content a,
+.menu-content a:link,
+.menu-content a:visited,
+.menu-content a:hover {
+  color: var(--text-color);
+  transition: color 1s;
+  text-decoration: none;
+}
+
+.menu-content a:hover {
+  color: var(--highlight-color);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.highlight {
+  color: var(--highlight-color);
+}
+
+.main-header-logo {
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 1rem;
+  height: 45px;
+  width: 155px;
+  transition: background-image 1s;
+}
+
+.content .text {
+  font-size: 7rem;
+  text-transform: uppercase;
+}
+
+.source {
+  bottom: 5rem;
+  font-family: var(--alt-font-family);
+  font-weight: 400;
+  font-size: 0.6rem;
+  position: fixed;
+  right: 5rem;
+}
+
+button {
+  background-color: transparent;
+  border: solid 1px var(--text-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: var(--text-color);
+  border: solid 1px var(--background-color);
+  color: var(--background-color);
+}
+
+footer {
+  background-color: #140b02;
+  bottom: 0;
+  color: #e9eadc;
+  display: flex;
+  font-family: var(--alt-font-family);
+  font-size: 0.8rem;
+  font-weight: 400;
+  height: 2.75rem;
+  justify-content: space-between;
+  left: 0;
+  padding: 0.5rem;
+  position: fixed;
+  right: 0;
+}
+
+footer > div {
+  margin: 0 2rem;
+}
+
+footer a,
+footer a:link,
+footer a:visited,
+footer a:hover {
+  color: #e9eadc;
+  transition: color 1s;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #e9eadc;
+}
+
+
+
+#knowledge img {
+  position: absolute;
+  left: 3rem;
+  bottom: 3rem;
+  height: 10rem;
+  width: 12rem;
+}
+
+#knowledge .text p {
+  margin: 0;
+}
+
+#knowledge .anim-1.animate {
+  animation: k-highlight 1s ease-in-out 500ms both;
+}
+
+#knowledge .anim-2 {
+  background-image: linear-gradient(var(--text-color), var(--text-color));
+  background-repeat: no-repeat;
+  background-size: 0 5px;
+  background-position: 0 90%;
+  transition: background-size 2s;
+  transition-delay: 2s;
+}
+
+#knowledge .anim-2.animate {
+  background-size: 100% 5px;
+}
+
+#knowledge-3 .content {
+  overflow-x: scroll;
+  padding: 0;
+}
+
+#knowledge-3 .steps {
+  overflow-x: scroll;
+  text-align: left;
+  transition: transform 6s;
+  width: 10000px;
+}
+
+#knowledge-3 .steps > span {
+  display: inline-block;
+  margin: 0 4rem;
+}
+
+#knowledge-3.step-0 .steps {
+  transform: translateX(0);
+}
+
+#knowledge-3.step-0 .steps.animate {
+  transition-delay: 3s;
+}
+
+#knowledge-3.step-1 .steps,
+#knowledge-3.step-0 .steps.animate {
+  transform: translateX(-1000px);
+}
+
+#knowledge-3.step-1 .steps.animate {
+  transform: translateX(-3000px);
+}
+
+#knowledge-5 .small-text {
+  font-family: var(--alt-font-family);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.1;
+  margin: auto;
+  width: 60%;
+}
+
+#knowledge-4 .anim-1,
+#knowledge-5 .anim-1,
+#knowledge-6 .anim-1,
+#knowledge-7 .anim-1 {
+  background-image: linear-gradient(var(--highlight-color), var(--highlight-color));
+  background-repeat: no-repeat;
+  background-size: 0 5px;
+  background-position: 0 90%;
+  transition: background-size 2s;
+  transition-delay: 2s;
+}
+
+#knowledge-4 .anim-1.animate,
+#knowledge-5 .anim-1.animate,
+#knowledge-6 .anim-1.animate,
+#knowledge-7 .anim-1.animate {
+  background-size: 100% 5px;
+}
+
+#knowledge-7 .content {
+  padding: 0 8rem;
+}
+
+#knowledge-7 .text {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#knowledge-7 .first {
+  font-size: 11.5rem;
+  width: 15rem;
+}
+
+#knowledge-7 .second {
+  flex-grow: 1;
+  font-size: 5rem;
+  text-align: left;
+}
+
+#knowledge-8 .text {
+  font-size: 8rem;
+}
+
+#knowledge-8 p,
+#action p,
+#donate p,
+#about p {
+  font-family: var(--alt-font-family);
+  font-weight: 400;
+  font-size: 0.8rem;
+  max-width: 50%;
+  margin: 1rem auto;
+}
+
+#action button,
+#donate button {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+#action .anim-1 {
+  background-image: linear-gradient(var(--text-color), var(--text-color));
+  background-repeat: no-repeat;
+  background-size: 0 5px;
+  background-position: 0 90%;
+  transition: background-size 2s;
+  transition-delay: 2s;
+}
+
+#action .anim-1.animate {
+  background-size: 100% 5px;
+}
+
+#donate .text {
+  color: var(--highlight-color);
+}
+
+#about .text {
+  font-size: 8rem;
+}
+
+#about p {
+  max-width: 20rem;
+}
+
+#educate .content {
+  display: flex;
+  justify-content: center;
+}
+
+#educate .content > div {
+  padding: 0.5rem;
+}
+
+#educate p {
+  margin: 0;
+}
+
+#educate .image {
+  background-color: #d8d8d8;
+  width: 12rem;
+  height: 12rem;
+}
+
+#educate .first {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+#educate .second {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+#educate .price {
+  font-family: var(--alt-font-family);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+
+#knowledge,
+#knowledge-2,
+#knowledge-8,
+#knowledge-9,
+#knowledge-10,
+#knowledge-11,
+#about,
+#educate {
+  --background-color: #e9eadc;
+  --header-color: #140b02;
+  --highlight-color: #c4a260;
+  --text-color: #140b02;
+  --logo-image: url('assets/LDB_OffBlack.png');
+}
+
+#knowledge-2,
+#knowledge-8 {
+  --background-color: #c4a260;
+}
+
+#knowledge-3,
+#knowledge-4,
+#knowledge-5,
+#knowledge-6,
+#knowledge-7,
+#donate {
+  --background-color: #913124;
+  --header-color: #e9eadc;
+  --highlight-color: #c4a260;
+  --text-color: #e9eadc;
+  --logo-image: url('assets/LDB_Pearl.png');
+}
+
+#knowledge-5,
+#donate {
+  --background-color: #0e321c;
+}
+
+#knowledge-3,
+#knowledge-4 {
+  --background-color: #913124;
+  --header-color: #c4a260;
+  --text-color: #e9eadc;
+  --logo-image: url('assets/LDB_Gold.png');
+}
+
+#action {
+  --background-color: #140b02;
+  --header-color: #e9eadc;
+  --highlight-color: #c4a260;
+  --text-color: #e9eadc;
+  --logo-image: url('assets/LDB_Pearl.png');
+}
+
+@media (max-width: 1000px) {
+  .main-header nav .nav-item {
+    display: none;
+  }
+
+  .content .text {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  section > .content {
+    padding: 2rem;
+  }
+
+  .menu-content {
+    font-size: 3rem;
+  }
+
+  .scroll {
+    font-size: 1rem;
+  }
+
+  .source {
+    bottom: 8rem;
+    font-size: 0.6rem;
+    right: 1rem;
+  }
+
+  #knowledge-7 .content {
+    padding: 0 2rem;
+  }
+
+  #knowledge-7 .text {
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #knowledge-7 .first {
+    font-size: 5rem;
+  }
+  
+  #knowledge-7 .second {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  #action p,
+  #donate p,
+  #about p {
+    max-width: 100%;
+  }
+
+  #knowledge-8 .text,
+  #donate .text,
+  #about .text {
+    font-size: 3rem;
+  }
+}
